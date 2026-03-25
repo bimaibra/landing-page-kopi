@@ -131,16 +131,19 @@ export default function OrderSection() {
     };
 
     return (
-        <section className="py-24 bg-surface-container-low" id="pesan">
-            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+        <section className="py-12 lg:py-8 md:py-16 bg-surface-container-low lg:min-h-screen flex flex-col justify-center" id="pesan">
+            <div className="w-full max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 lg:items-center">
                 {/* Form */}
-                <div className="order-2 md:order-1 sticky top-6">
-                    <div className="bg-surface-container-lowest p-8 md:p-10 rounded-2xl shadow-sm border border-outline-variant/10">
-                        <span className="block text-secondary font-bold tracking-widest uppercase text-xs mb-2">PEMESANAN</span>
-                        <h3 className="text-3xl font-headline text-primary mb-8">Pesan Sekarang</h3>
+                <div className="order-2 md:order-1 md:sticky md:top-6 z-10 w-full">
+                    <div className="bg-surface-container-lowest p-5 lg:p-7 rounded-2xl shadow-sm border border-outline-variant/10 flex flex-col max-h-[calc(100vh-2rem)] lg:max-h-[calc(100vh-4rem)] relative">
+                        <div className="flex-shrink-0 mb-4 lg:mb-5">
+                            <span className="block text-secondary font-bold tracking-widest uppercase text-xs mb-1.5 lg:mb-2">PEMESANAN</span>
+                            <h3 className="text-2xl md:text-3xl lg:text-3xl font-headline text-primary">Pesan Sekarang</h3>
+                        </div>
                         
-                        <form className="space-y-8" onSubmit={handleSubmit}>
-                            {/* Informasi Pelanggan */}
+                        <form className="flex flex-col flex-1 min-h-0 relative" onSubmit={handleSubmit}>
+                            <div className="md:overflow-y-auto md:pr-3 md:-mr-3 custom-scrollbar space-y-6 flex-1 md:pb-6">
+                                {/* Informasi Pelanggan */}
                             <div className="space-y-5 bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
                                 <h4 className="font-bold text-primary text-sm uppercase tracking-wider border-b border-outline-variant/10 pb-3 flex items-center gap-2">
                                     <span className="material-symbols-outlined text-[18px]">person</span>
@@ -239,17 +242,18 @@ export default function OrderSection() {
                                         <span className="material-symbols-outlined text-[18px]">shopping_bag</span>
                                         Daftar Pesanan ({Object.keys(orders).length})
                                     </label>
-                                    <div className="max-h-[22rem] overflow-y-auto pr-2 custom-scrollbar space-y-3 -mr-2 bg-surface-container-lowest p-1">
+                                    <div className="space-y-3 py-1">
                                         {Object.values(orders).map(order => (
                                             <OrderItemCart key={order.id} item={order} />
                                         ))}
                                     </div>
                                 </div>
                             )}
+                            </div>
                             
                             {/* Total and Submit */}
-                            <div className="pt-6 border-t border-outline-variant/10 mt-10">
-                                <div className="flex items-center justify-between mb-6 bg-secondary/5 rounded-xl p-4 border border-secondary/20">
+                            <div className="flex-shrink-0 pt-4 mt-6 md:mt-2 border-t border-outline-variant/10 bg-surface-container-lowest sticky bottom-0 z-20 pb-4 md:pb-0 shadow-[0_-8px_20px_-8px_rgba(0,0,0,0.08)] md:shadow-none">
+                                <div className="flex items-center justify-between mb-4 bg-secondary/5 rounded-xl p-4 border border-secondary/20">
                                     <span className="font-bold text-on-surface">Total Pesanan:</span>
                                     <span className="text-2xl font-bold text-secondary">{formatRupiah(total)}</span>
                                 </div>
@@ -265,53 +269,54 @@ export default function OrderSection() {
                     </div>
                 </div>
 
+
                 {/* Info */}
-                <div className="space-y-12 order-1 md:order-2 pt-10">
-                    <div className="space-y-6">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full text-secondary font-medium text-sm">
-                            <span className="material-symbols-outlined text-[18px]">local_cafe</span>
+                <div className="space-y-8 lg:space-y-10 order-1 md:order-2 pt-6 md:pt-0">
+                    <div className="space-y-4 lg:space-y-5">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full text-secondary font-medium text-xs lg:text-sm">
+                            <span className="material-symbols-outlined text-[16px] lg:text-[18px]">local_cafe</span>
                             Dibuat dengan Sepenuh Hati
                         </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-headline text-primary leading-[1.1]">
+                        <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-headline text-primary leading-[1.15]">
                             Bawa Kehangatan <br />
                             <span className="text-secondary italic">Ke Rumahmu</span>
                         </h2>
-                        <p className="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                        <p className="text-on-surface-variant text-base lg:text-lg leading-relaxed max-w-md">
                             Kami memastikan setiap pesanan diantar dengan standar kualitas terbaik,
                             menjaga suhu dan aroma kopi tetap sempurna hingga di tangan Anda.
                         </p>
                     </div>
                     
-                    <div className="grid gap-6 pt-4">
-                        <div className="flex items-start gap-4 p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="w-14 h-14 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary shrink-0">
-                                <span className="material-symbols-outlined text-3xl">delivery_dining</span>
+                    <div className="grid gap-3 lg:gap-4 pt-2">
+                        <div className="flex items-start gap-3 lg:gap-4 p-4 lg:p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
+                            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary shrink-0">
+                                <span className="material-symbols-outlined text-2xl lg:text-3xl">delivery_dining</span>
                             </div>
                             <div>
-                                <h4 className="text-lg font-bold text-primary mb-1">Pengiriman Cepat</h4>
-                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                <h4 className="text-base lg:text-lg font-bold text-primary mb-0.5 lg:mb-1">Pengiriman Cepat</h4>
+                                <p className="text-on-surface-variant text-xs lg:text-sm leading-relaxed">
                                     Radius 5km, pengiriman dalam 15-30 menit. Tetap segar saat tiba.
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-4 p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="w-14 h-14 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary shrink-0">
-                                <span className="material-symbols-outlined text-3xl">verified</span>
+                        <div className="flex items-start gap-3 lg:gap-4 p-4 lg:p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
+                            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary shrink-0">
+                                <span className="material-symbols-outlined text-2xl lg:text-3xl">verified</span>
                             </div>
                             <div>
-                                <h4 className="text-lg font-bold text-primary mb-1">Kualitas Terjamin</h4>
-                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                <h4 className="text-base lg:text-lg font-bold text-primary mb-0.5 lg:mb-1">Kualitas Terjamin</h4>
+                                <p className="text-on-surface-variant text-xs lg:text-sm leading-relaxed">
                                     Biji kopi fresh roasted, diseduh tepat saat pesanan masuk untuk cita rasa maksimal.
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-4 p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="w-14 h-14 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary shrink-0">
-                                <span className="material-symbols-outlined text-3xl">support_agent</span>
+                        <div className="flex items-start gap-3 lg:gap-4 p-4 lg:p-5 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
+                            <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary shrink-0">
+                                <span className="material-symbols-outlined text-2xl lg:text-3xl">support_agent</span>
                             </div>
                             <div>
-                                <h4 className="text-lg font-bold text-primary mb-1">Pesan Melalui WhatsApp</h4>
-                                <p className="text-on-surface-variant text-sm leading-relaxed">
+                                <h4 className="text-base lg:text-lg font-bold text-primary mb-0.5 lg:mb-1">Pesan Melalui WhatsApp</h4>
+                                <p className="text-on-surface-variant text-xs lg:text-sm leading-relaxed">
                                     Kami akan menghubungi Anda untuk konfirmasi pesanan dan biaya ongkos kirim.
                                 </p>
                             </div>
