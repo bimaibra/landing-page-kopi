@@ -44,11 +44,6 @@ export default function MenuSection() {
                     src={product.image}
                     loading="lazy"
                 />
-                {product.badge && (
-                    <span className="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                        {product.badge}
-                    </span>
-                )}
             </div>
             <div className="p-5 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-primary mb-2 line-clamp-1">{product.name}</h3>
@@ -115,11 +110,6 @@ export default function MenuSection() {
                     src={product.image}
                     loading="lazy"
                 />
-                {product.badge && (
-                    <span className="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                        {product.badge}
-                    </span>
-                )}
             </div>
             <div className="p-5 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-primary mb-2 line-clamp-1">{product.name}</h3>
@@ -233,11 +223,6 @@ export default function MenuSection() {
                                 alt={selectedProduct.name} 
                                 className="w-full min-w-[200px] max-w-[280px] sm:max-w-[300px] aspect-[4/3] object-cover rounded-2xl shadow-md" 
                             />
-                            {selectedProduct.badge && (
-                                <span className="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                                    {selectedProduct.badge}
-                                </span>
-                            )}
                         </div>
                         
                         <div className="p-6 overflow-y-auto custom-scrollbar flex-grow">

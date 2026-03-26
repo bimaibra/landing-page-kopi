@@ -2,7 +2,20 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import { kopiKemasan, rtdProducts, variantsKemasan } from '../../Data/products';
 
 export default function OrderSection({ orders, setOrders }) {
-    const [customer, setCustomer] = useState({ name: '', phone: '', address: '' });
+    const [customer, setCustomer] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('kopi_customer');
+            if (saved) {
+                try { return JSON.parse(saved); } catch(e) {}
+            }
+        }
+        return { name: '', phone: '', address: '' };
+    });
+
+    useEffect(() => {
+        localStorage.setItem('kopi_customer', JSON.stringify(customer));
+    }, [customer]);
+
     const [selectValue, setSelectValue] = useState('');
     const [lastAddedId, setLastAddedId] = useState(null);
     const cartRef = useRef(null);
@@ -154,8 +167,14 @@ export default function OrderSection({ orders, setOrders }) {
         message += `%0A*Total Pembayaran: ${formatRupiah(total)}*%0A%0A`;
         message += `Mohon info ongkir dan nomor rekening ya. Terima kasih!`;
 
-        const waNumber = "6285155122112"; // Sesuaikan dengan nomor WhatsApp admin yang asli
+        const waNumber = "6281252788916"; // Sesuaikan dengan nomor WhatsApp admin yang asli
         window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+
+        // Reset state & clear storage setelah kirim
+        setOrders({});
+        setCustomer({ name: '', phone: '', address: '' });
+        localStorage.removeItem('kopi_orders');
+        localStorage.removeItem('kopi_customer');
     };
 
     const OrderItemCart = ({ item }) => {
@@ -378,7 +397,7 @@ export default function OrderSection({ orders, setOrders }) {
 
 
                 {/* Info */}
-                <div className="space-y-10 lg:space-y-10 order-1 md:order-2 pt-6 md:pt-0">
+                <div className="space-y-8 lg:space-y-8 order-1 md:order-2 -mt-10 lg:-mt-10">
                     <div className="space-y-4 lg:space-y-5">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full text-secondary font-medium text-xs lg:text-sm">
                             <span className="material-symbols-outlined text-[16px] lg:text-[18px]">local_cafe</span>

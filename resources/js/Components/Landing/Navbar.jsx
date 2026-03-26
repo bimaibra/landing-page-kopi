@@ -36,8 +36,11 @@ export default function Navbar() {
     return (
         <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md transition-all duration-300">
             <nav className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-                <div className="font-headline text-2xl font-bold text-stone-900">
-                    Kopi Tujuan Hidup
+                <div className="flex items-center gap-3">
+                    <img src="/images/logo.png" alt="Logo Kopi Tujuan Hidup" className="w-10 h-10 object-contain mix-blend-multiply" />
+                    <div className="font-headline text-2xl font-bold text-stone-900 hidden sm:block">
+                        Kopi Tujuan Hidup
+                    </div>
                 </div>
 
                 {/* Desktop Links */}

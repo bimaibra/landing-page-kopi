@@ -5,8 +5,7 @@ export const kopiKemasan = [
         desc: 'Biji kopi robusta pilihan dengan gilingan fine, cocok untuk diseduh tubruk dengan aroma kuat.',
         price: 'Rp 25.000',
         priceNumeric: 25000,
-        badge: 'Original',
-        image: 'https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&q=80&w=600',
+        image: 'images/kemasan.jpg',
         flavors: { acid: 2, bitter: 5, sweet: 2, nutty: 4 },
     },
     {
@@ -15,7 +14,7 @@ export const kopiKemasan = [
         desc: 'Karakter rasa cokelat gelap dan rempah, bodi tebal, tingkat keasaman sangat rendah.',
         price: 'Rp 35.000',
         priceNumeric: 35000,
-        image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&q=80&w=600',
+        image: 'images/kemasan.jpg',
         flavors: { acid: 1, bitter: 5, sweet: 2, nutty: 5 },
     },
     {
@@ -24,8 +23,7 @@ export const kopiKemasan = [
         desc: 'Kopi single origin dengan note floral dan citrus, asam yang kompleks namun bersih.',
         price: 'Rp 65.000',
         priceNumeric: 65000,
-        badge: 'Bestseller',
-        image: 'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&q=80&w=600',
+        image: 'images/kemasan.jpg',
         flavors: { acid: 4, bitter: 2, sweet: 4, nutty: 3 },
     },
     {
@@ -34,7 +32,7 @@ export const kopiKemasan = [
         desc: 'Campuran 70% Arabica dan 30% Robusta untuk menghasilkan krema tebal dan rasa seimbang.',
         price: 'Rp 50.000',
         priceNumeric: 50000,
-        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600',
+        image: 'images/kemasan.jpg',
         flavors: { acid: 3, bitter: 4, sweet: 3, nutty: 4 },
     },
     {
@@ -43,8 +41,7 @@ export const kopiKemasan = [
         desc: 'Kopi luwak liar dengan proses fermentasi alami, menghasilkan tekstur selembut sutra.',
         price: 'Rp 150.000',
         priceNumeric: 150000,
-        badge: 'Premium',
-        image: 'https://images.unsplash.com/photo-1514432324607-a2ce7beea2b0?auto=format&fit=crop&q=80&w=600',
+        image: 'images/kemasan.jpg',
         flavors: { acid: 3, bitter: 2, sweet: 5, nutty: 4 },
     },
 ];
@@ -56,8 +53,7 @@ export const rtdProducts = [
         desc: 'Espresso blend pilihan dengan susu segar dan manis gula aren asli dalam kemasan praktis.',
         price: 'Rp 18.000',
         priceNumeric: 18000,
-        badge: 'Favorit',
-        image: 'https://images.unsplash.com/photo-1595087611311-8fc2bdbebfa1?auto=format&fit=crop&q=80&w=600',
+        image: 'images/rtd.jpg',
     },
     {
         id: 'rtd-coldbrew',
@@ -65,7 +61,7 @@ export const rtdProducts = [
         desc: 'Ekstraksi dingin 18 jam menghasilkan rasa kopi murni tanpa pahit berlebih.',
         price: 'Rp 20.000',
         priceNumeric: 20000,
-        image: 'https://images.unsplash.com/photo-1461023058943-0708e52150fe?auto=format&fit=crop&q=80&w=600',
+        image: 'images/rtd.jpg',
     },
     {
         id: 'rtd-caramel',
@@ -73,7 +69,7 @@ export const rtdProducts = [
         desc: 'Perpaduan sempurna antara kopi, susu, dan sirup karamel gurih.',
         price: 'Rp 22.000',
         priceNumeric: 22000,
-        image: 'https://images.unsplash.com/photo-1572442388796-11668aa44f7b?auto=format&fit=crop&q=80&w=600',
+        image: 'images/rtd.jpg',
     },
     {
         id: 'rtd-hazelnut',
@@ -81,7 +77,7 @@ export const rtdProducts = [
         desc: 'Sensasi rasa kacang hazelnut panggang dipadu dengan latte krimi.',
         price: 'Rp 22.000',
         priceNumeric: 22000,
-        image: 'https://images.unsplash.com/photo-1549615556-9d3e8bf03b90?auto=format&fit=crop&q=80&w=600',
+        image: 'images/rtd.jpg',
     },
     {
         id: 'rtd-mocha',
@@ -89,7 +85,7 @@ export const rtdProducts = [
         desc: 'Kenikmatan kopi berpadu dengan cokelat premium pilihan bernuansa dark chocolate.',
         price: 'Rp 25.000',
         priceNumeric: 25000,
-        image: 'https://images.unsplash.com/photo-1582046424266-724e52dd04b9?auto=format&fit=crop&q=80&w=600',
+        image: 'images/rtd.jpg',
     },
 ];
 

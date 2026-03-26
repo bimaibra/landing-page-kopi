@@ -2,7 +2,7 @@ export default function WhatsAppFab() {
     return (
         <a
             className="fixed bottom-8 right-8 z-40 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all group"
-            href="https://wa.me/yournumber"
+            href="https://wa.me/6281252788916"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Hubungi via WhatsApp"

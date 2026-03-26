@@ -6,7 +6,7 @@ export default function AboutSection() {
                     <img
                         alt="Tentang Kopi Tujuan Hidup"
                         className="w-full h-full object-cover"
-                        src="/images/about.png"
+                        src="/images/about1.jpg"
                     />
                 </div>
                 <div className="space-y-8">
@@ -16,7 +16,7 @@ export default function AboutSection() {
                     </h2>
                     <div className="space-y-4 text-on-surface-variant text-lg leading-relaxed">
                         <p>
-                            Kopi Tujuan Hidup bermula dari sebuah mimpi sederhana di Kediri, Jawa Timur: menyajikan bukan sekadar
+                            Kopi Tujuan Hidup bermula dari sebuah mimpi sederhana di Kediri, Jawa Timur. Menyajikan bukan sekadar
                             minuman, melainkan sebuah santuari bagi mereka yang menghargai ketenangan
                             di tengah hiruk-pikuk dunia.
                         </p>

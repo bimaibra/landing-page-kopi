@@ -32,8 +32,20 @@ const Toast = ({ message, isVisible, onClose }) => {
 };
 
 export default function Welcome() {
-    const [orders, setOrders] = useState({});
+    const [orders, setOrders] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('kopi_orders');
+            if (saved) {
+                try { return JSON.parse(saved); } catch(e) {}
+            }
+        }
+        return {};
+    });
     const [toast, setToast] = useState({ visible: false, message: '' });
+
+    useEffect(() => {
+        localStorage.setItem('kopi_orders', JSON.stringify(orders));
+    }, [orders]);
 
     const showToast = (message) => {
         setToast({ visible: true, message });

@@ -5,7 +5,7 @@ export default function ContactSection() {
         {
             icon: 'location_on',
             title: 'Alamat',
-            lines: ['Kediri,', 'Jawa Timur.'],
+            lines: ['Kediri, Jawa Timur.'],
         },
         {
             icon: 'mail',

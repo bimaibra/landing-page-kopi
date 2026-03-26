@@ -4,8 +4,13 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-stone-800 pb-12">
                     <div className="md:col-span-2 space-y-4">
-                        <div className="font-headline text-3xl font-bold text-stone-100 mb-4">
-                            Kopi Tujuan Hidup
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1.5 shrink-0">
+                                <img src="/images/logo.png" alt="Logo Kopi Tujuan Hidup" className="w-full h-full object-contain mix-blend-multiply" />
+                            </div>
+                            <div className="font-headline text-3xl font-bold text-stone-100">
+                                Kopi Tujuan Hidup
+                            </div>
                         </div>
                         <p className="font-body text-stone-400 max-w-sm leading-relaxed">
                             Menyajikan momen terbaik lewat secangkir kopi untuk para penikmat rasa. Dipanggang di Kediri, dinikmati di seluruh Indonesia.

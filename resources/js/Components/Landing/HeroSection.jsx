@@ -6,7 +6,7 @@ export default function HeroSection() {
                 <img
                     alt="Hero Coffee"
                     className="w-full h-full object-cover brightness-[0.35]"
-                    src="/images/hero.png"
+                    src="/images/hero.jpg"
                 />
             </div>
 
