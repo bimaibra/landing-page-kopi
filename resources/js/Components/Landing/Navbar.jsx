@@ -6,15 +6,18 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['menu', 'tentang', 'faq', 'kontak', 'pesan'];
+            // Urutan harus sesuai kemunculan di DOM: menu → pesan → tentang → faq → kontak
+            const sections = ['menu', 'pesan', 'tentang', 'faq', 'kontak'];
             let current = '';
             for (let section of sections) {
                 const element = document.getElementById(section);
-                if (element && window.scrollY >= element.offsetTop - 150) {
-                    current = section;
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 160) {
+                        current = section;
+                    }
                 }
             }
-            if (window.scrollY < 150) current = '';
             setActiveSection(current);
         };
         window.addEventListener('scroll', handleScroll);
@@ -42,11 +45,11 @@ export default function Navbar() {
                     {links.map((link) => (
                         <a
                             key={link.label}
-                            className={
+                            className={`pb-1 border-b-2 transition-all duration-200 ${
                                 activeSection === link.id
-                                    ? 'text-stone-900 border-b-2 border-stone-800 pb-1 transition-all'
-                                    : 'text-stone-600 hover:text-stone-900 transition-colors'
-                            }
+                                    ? 'text-stone-900 border-stone-900'
+                                    : 'text-stone-600 border-transparent hover:text-stone-900 hover:border-stone-300'
+                            }`}
                             href={link.href}
                         >
                             {link.label}
@@ -54,10 +57,10 @@ export default function Navbar() {
                     ))}
                     <a
                         href="#pesan"
-                        className={`px-6 py-2 rounded-xl transition-all active:scale-95 duration-200 ${
+                        className={`px-6 py-2 rounded-xl transition-all active:scale-95 duration-200 border-b-2 ${
                             activeSection === 'pesan' 
-                            ? 'bg-secondary text-white' 
-                            : 'bg-primary text-on-primary hover:bg-secondary'
+                            ? 'bg-secondary text-white border-stone-900' 
+                            : 'bg-primary text-on-primary hover:bg-secondary border-transparent'
                         }`}
                     >
                         Pesan
@@ -82,8 +85,10 @@ export default function Navbar() {
                     {links.map((link) => (
                         <a
                             key={link.label}
-                            className={`block font-headline text-lg py-2 transition-colors ${
-                                activeSection === link.id ? 'text-stone-900 font-bold' : 'text-stone-700'
+                            className={`block font-headline text-lg py-2 border-b transition-colors ${
+                                activeSection === link.id 
+                                    ? 'text-stone-900 font-bold border-stone-900' 
+                                    : 'text-stone-700 border-transparent'
                             }`}
                             href={link.href}
                             onClick={() => setMobileOpen(false)}

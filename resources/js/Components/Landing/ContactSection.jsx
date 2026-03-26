@@ -1,3 +1,5 @@
+import Map from './Map';
+
 export default function ContactSection() {
     const contacts = [
         {
@@ -54,17 +56,8 @@ export default function ContactSection() {
                     ))}
                 </div>
 
-                {/* Map Placeholder */}
-                <div className="w-full h-96 rounded-2xl overflow-hidden shadow-inner bg-surface-container-highest relative">
-                    <div className="absolute inset-0 flex items-center justify-center flex-col space-y-4 bg-stone-200">
-                        <span className="material-symbols-outlined text-stone-400 text-6xl">
-                            map
-                        </span>
-                        <p className="text-stone-500 font-medium">Peta Lokasi Kopi Tujuan Hidup</p>
-                        <div className="px-6 py-2 bg-stone-300 rounded-full text-xs font-bold text-stone-600 uppercase tracking-widest">
-                            Interactive Map Disabled
-                        </div>
-                    </div>
+                <div className="w-full h-96 rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/30 bg-surface-container relative">
+                    <Map zoom={15} label="Kopi Tujuan Hidup" />
                 </div>
             </div>
         </section>

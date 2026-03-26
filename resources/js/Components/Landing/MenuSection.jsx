@@ -87,9 +87,16 @@ export default function MenuSection() {
                     <span className="text-lg font-bold text-secondary">
                         {product.price}
                     </span>
-                    <a href="#pesan" onClick={(e) => e.stopPropagation()} className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer shrink-0">
-                        <span className="material-symbols-outlined text-[20px] leading-none">shopping_cart</span>
-                    </a>
+                    <button 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            document.getElementById('pesan')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
+                        className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer shrink-0 shadow-md active:scale-95"
+                        title="Pesan sekarang"
+                    >
+                        <span className="material-symbols-outlined text-[20px] leading-none">add_shopping_cart</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -132,9 +139,16 @@ export default function MenuSection() {
                     <span className="text-lg font-bold text-secondary">
                         {product.price}
                     </span>
-                    <a href="#pesan" onClick={(e) => e.stopPropagation()} className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer shrink-0">
-                        <span className="material-symbols-outlined text-[20px] leading-none">shopping_cart</span>
-                    </a>
+                    <button 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            document.getElementById('pesan')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
+                        className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors cursor-pointer shrink-0 shadow-md active:scale-95"
+                        title="Pesan sekarang"
+                    >
+                        <span className="material-symbols-outlined text-[20px] leading-none">add_shopping_cart</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -261,10 +275,16 @@ export default function MenuSection() {
                                 <span className="text-sm text-on-surface-variant font-medium">Harga</span>
                                 <span className="text-xl font-bold text-secondary">{selectedProduct.price}</span>
                             </div>
-                            <a href="#pesan" onClick={() => setSelectedProduct(null)} className="px-6 py-2.5 bg-primary text-white rounded-xl shadow-lg shadow-primary/30 hover:bg-secondary transition-all font-medium flex items-center justify-center w-full sm:w-auto gap-2 shrink-0">
-                                <span className="material-symbols-outlined text-[20px]">shopping_cart</span>
-                                Pesan
-                            </a>
+                            <button 
+                                onClick={() => {
+                                    document.getElementById('pesan')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    setSelectedProduct(null);
+                                }} 
+                                className="px-6 py-2.5 bg-primary text-white rounded-xl shadow-lg shadow-primary/30 hover:bg-secondary transition-all font-medium flex items-center justify-center w-full sm:w-auto gap-2 shrink-0 active:scale-95"
+                            >
+                                <span className="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                                Pesan Sekarang
+                            </button>
                         </div>
                     </div>
                 </div>

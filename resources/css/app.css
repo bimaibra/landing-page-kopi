@@ -1,3 +1,6 @@
+/* Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,4 +25,16 @@ h1, h2, h3, .font-serif {
 /* Smooth scrolling for anchor links */
 html {
     scroll-behavior: smooth;
+}
+
+/* Custom select — sembunyikan native arrow di semua browser */
+.select-custom {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+}
+/* IE10+ */
+.select-custom::-ms-expand {
+    display: none !important;
 }
